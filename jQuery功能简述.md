@@ -2,7 +2,7 @@
 
 ## jQuery
 
-jQuery 从 2006 年诞生至今已历经 14 年，仍然是应用最广泛的 JavaScript 函数库。截止 2020 年 7 月，在全世界排名前 100 万的网站中，有超过 80%的网站使用 jQuery。[统计数据](https://trends.builtwith.com/javascript/jQuery)
+jQuery 从 2006 年诞生至今已历经 14 年，仍然是应用最广泛的 JavaScript 函数库。截止 2020 年 7 月，在全世界排名前 100 万的网站中，有超过 80%的网站使用 jQuery。[点击查看统计数据](https://trends.builtwith.com/javascript/jQuery)
 
 ## jQuery 的基本功能
 
@@ -10,7 +10,9 @@ jQuery 封装了 DOM 功能，让 DOM 函数的使用变得十分简洁方便。
 
 ### 一、获取网页元素
 
-- jQuery 获取的结果是一个对象
+#### jQuery 获取的结果是一个对象
+
+- 一些基本方法
 
 ```javascript
 $(document); // 选择整个文档对象
@@ -18,23 +20,32 @@ $("#myId"); // 选择id = 'myId' 的元素
 $(".myClass"); // 选择class = 'myClass' 的元素
 $("div.myClass"); // 选择class = 'myClass' 的div元素
 $("input[name=first]"); // 选择name = 'first' 的 input 元素
+```
 
-// jQuery特有的表达式
+- jQuery 特有的表达式
+
+```javascript
 $("a:first"); // 选择网页中第一个a元素
 $("tr:odd"); // 选择表格中的奇数行
 $("#myFrom:input"); // 选择表单中的id='myFrom'的input元素
 $("div:visible"); // 选择可见的div元素
 $("div:gt(2)"); // 选择所有的div元素，除了前3个
 $("div:animated"); // 选择当前处于动画状态的div元素
+```
 
-// 进一步过滤对div的选择结果对象
+- 进一步过滤对 div 的选择结果对象
+
+```javascript
 $("div").has("p"); // 选择包含p元素的div元素
 $("div").not(".myClass"); //选择class != 'myClass' 的div元素
 $("div").filter(".myClass"); // 选择class = 'myClass' 的div元素
 $("div").first(); // 选择第1个div元素
 $("div").eq(5); // 选择第6个div元素
+```
 
-// 通过div选择其他元素
+- 通过 div 选择其他元素
+
+```javascript
 $("div").next("p"); // 选择div元素后面的第1个p元素
 $("div").parent(); // 选择div元素的父元素
 $("div").closest("from"); // 选择离div最近的from父元素
@@ -92,6 +103,10 @@ $("ul").append("<li>list</li>"); // 把新创建的li插入到ul中
 
 - 复制元素
   - .clone()
+  - 返回当前 jQuery 对象的一个克隆副本
+  - 2 个参数：
+    1. withDataAndEvents 是否同时复制元素的**数据和绑定事件**，默认 false
+    2. deepWithDataAndEvents 是否同时复制元素所有子元素的数据和绑定事件，默认值为第 1 个参数(withDataAndEvents)的值
 
 #### 2. 删
 
@@ -134,6 +149,7 @@ $("h1").html("Hello"); // html传参'Hello'，实现对h1进行赋值
 ```
 
 - jQuery 常见取值/赋值函数
+
   - .html() 查/改 html 内容
   - .text() 查/改 text 内容
   - .attr() 查/改 某个属性的值
@@ -144,4 +160,4 @@ $("h1").html("Hello"); // html传参'Hello'，实现对h1进行赋值
 - 注意：
   - 如果结果对象包含多个元素，那么赋值时，将对其中所有的元素赋值
   - 取值时，则是只取出第一个元素的值
-  - .text()例外，它取出所有元素的text内容
+  - .text()例外，它取出所有元素的 text 内容
