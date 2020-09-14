@@ -104,6 +104,7 @@ $("ul").append("<li>list</li>"); // 把新创建的li插入到ul中
 - 复制元素
   - .clone()
   - 返回当前 jQuery 对象的一个克隆副本
+  - 包括所有匹配元素、匹配元素的下级元素、文字节点
   - 2 个参数：
     1. withDataAndEvents 是否同时复制元素的**数据和绑定事件**，默认 false
     2. deepWithDataAndEvents 是否同时复制元素所有子元素的数据和绑定事件，默认值为第 1 个参数(withDataAndEvents)的值
